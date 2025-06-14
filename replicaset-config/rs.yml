@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: nginx-replicaset # name of the replicaset
+spec:
+  replicas: 3 # number of replicas (pods with the `same label selector` and `same template`)
+  selector:
+    matchLabels:
+      app: nginx # label selector of the replicaset (can be anything eg `name:vignesh-rs`). This will be used to identify the pods created by the replicaset and to delete the pods created by the replicaset
+  template:
+    metadata:
+      labels:
+        app: nginx # label of the pod created by the replicaset
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 80
