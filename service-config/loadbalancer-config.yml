@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service 
+spec:
+  selector:
+    app: nginx # Again this should be the label in the respective container
+  ports:
+    - protocol: TCP
+      port: 80 # port of the service (Internet exposed port)
+      targetPort: 80 # port where the pod is exposed
+  type: LoadBalancer
+
+# NOTE: LoadBalancer load balances the traffic between the pods (if there are more than one within the service).
+
+# Can be used to expose pods to the internet but it is not recommended, should use an Ingress controller instead so that we dont have to create separate load balancers for each service (Load Balancers are billed separately)

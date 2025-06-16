@@ -12,3 +12,6 @@ spec:
   type: ClusterIP # The service is exposed within the cluster in the URL format http://<service-name>.<namespace>.svc.cluster.<cluster-name>:port
 
   # NOTE: ClusterIP load balances the traffic between the pods(if there are more than one within the service).
+
+# Also clusterip is accessible only within the cluster and not exposed to the internet
+# Typically used for self hosted services like DB, Redis etc coz they are not (and should not be) exposed to the internet
