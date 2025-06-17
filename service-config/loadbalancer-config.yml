@@ -7,8 +7,8 @@ spec:
     app: nginx # Again this should be the label in the respective container
   ports:
     - protocol: TCP
-      port: 80 # port of the service (Internet exposed port)
-      targetPort: 80 # port where the pod is exposed
+      port: 3000 # port of the service (Internet exposed port)
+      targetPort: 3000 # port where the pod is exposed
   type: LoadBalancer
 
 # NOTE: LoadBalancer load balances the traffic between the pods (if there are more than one within the service).

@@ -7,7 +7,7 @@ spec:
     app: nginx # Again this should be the label in the respective container
   ports:
     - protocol: TCP
-      port: 80 # port of the service
-      targetPort: 80 # port where the pod is exposed
+      port: 3000 # port of the service
+      targetPort: 3000 # port where the pod is exposed
       nodePort: 30007  # This port can be any valid port within the NodePort range ~ (30000-32767)
   type: NodePort
